@@ -2,11 +2,11 @@
 class DAO {
 
 	
-private $host="db";
-private $user="root";
-private $password="12345678";
-private $database="greengarden";
-private $charset="utf8";
+	private $host="127.0.0.1";
+	private $user="Fineas";
+	private $password="12345678";
+	private $database="greengarden";
+	private $charset="utf8";
 
 //instance courante de la connexion
 private $connection;
