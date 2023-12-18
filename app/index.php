@@ -67,6 +67,18 @@ if (isset($_GET['category-number']) && $_GET['category-number'] == 'all') {
                     <?php  } ?>   
                     </form>
                     </li>
+                    <?php if(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 2) { ?>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Gestion
+                    </a>
+                    <form class="dropdown-menu" method="POST" action="management.php">
+                    <li><a class="dropdown-item text-center my-1"><button type="submit" class="btn" onchange="this.form.submit()" value="orders" name="orders">Commandes</button></a></li>
+                    <li><a class="dropdown-item text-center my-1"><button type="submit" class="btn" onchange="this.form.submit()" value="products" name="products">Produits</button></a></li>
+                    <li><a class="dropdown-item text-center my-1"><button type="submit" class="btn" onchange="this.form.submit()" value="users" name="users">Utilisateurs</button></a></li>   
+                    </form>
+                    </li>
+                    <?php  } ?>
                     <li class="nav-item dropdown d-flex">
                     <a class="nav-link dropdown-toggle me-2" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Mon compte
@@ -78,11 +90,13 @@ if (isset($_GET['category-number']) && $_GET['category-number'] == 'all') {
                         <li><a class="dropdown-item" href="logout.php">Deconnexion</a></li>
                     </ul>
                     </li>
+
                     <!-- <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                      </form>     -->
                 </ul>
+
             </div>
 
         </div>

@@ -3,8 +3,8 @@ class DAO {
 
 	
 	private $host="127.0.0.1";
-	private $user="Fineas";
-	private $password="12345678";
+	private $user="root";
+	private $password="";
 	private $database="greengarden";
 	private $charset="utf8";
 
@@ -44,6 +44,16 @@ $query = $this->connection ->prepare($sql);
 $query->execute();
 return $query->fetchAll();  
 
+}
+
+public function getUserInfo($useremail) {
+         
+    $sqluser = "SELECT * FROM `t_d_user` WHERE `Login`=?";
+    $query = $this->connection->prepare($sqluser);
+    $query->execute(array($useremail));
+    $fetch = $query->fetchAll();
+    return $fetch;
+    
 }
 
 }
